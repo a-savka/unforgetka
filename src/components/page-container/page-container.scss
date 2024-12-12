@@ -1,0 +1,35 @@
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: 1px solid #CB31F1;
+  background-color: rgba($color: #CB31F1, $alpha: 0.05);
+  border-radius: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page-title {
+  color: #F50CA8;
+  font-size: 20px;
+  font-weight: normal;
+  font-variant: small-caps;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

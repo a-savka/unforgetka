@@ -1,0 +1,124 @@
+
+.app-wrapper {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  max-width: 480px;
+  max-height: 960px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-body {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.day-container {
+  flex-grow: 1;
+  border: 1px solid #CB31F1;
+  background-color: rgba($color: #CB31F1, $alpha: 0.05);
+  border-radius: 20px;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: auto;
+  transition: all 1s;
+  overflow-y: hidden;
+  flex-basis: 0;
+
+  &.opened {
+    flex-grow: 2;
+    transition: all 1s;
+    flex-basis: 0;
+
+    .block-title svg {
+      rotate: 180deg;
+      transition: rotate 1s ease-out;
+    }
+  }
+
+  &.closed {
+    flex-grow: 0;
+    height: 40px;
+    transition: all 1s;
+    flex-basis: 40px;
+  }
+
+  &.semi-opened {
+    flex-basis: 50%;
+    transition: all 1s;
+  }
+
+}
+
+.block-title {
+  color: #F50CA8;
+  // font-family: "LisuBosa";
+  font-size: 20px;
+  font-weight: normal;
+  font-variant: small-caps;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    margin-right: 10px;
+    transition: rotate 1s ease-out;
+  }
+}
+
+.block-body {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.block-action {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.block-action, .task-action, .form-action, .dialog-action {
+  button.MuiButton-contained {
+    box-shadow: none !important;
+    background-color: #A234BE !important;
+    border-radius: 20px !important;
+    color: white;
+  }
+  button.MuiButton-outlined {
+    box-shadow: none !important;
+    background-color: white !important;
+    border-radius: 20px !important;
+    color: #A234BE !important;
+    border-color: #A234BE !important;
+  }
+}
+

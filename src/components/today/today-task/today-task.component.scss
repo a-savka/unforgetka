@@ -1,0 +1,32 @@
+
+.task-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16px;;
+  padding-right: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 36px;
+  animation: fadeIn 1s;
+
+  .task-title {
+    flex-grow: 1;
+    font-size: 20px;
+  }
+
+  .task-switch {
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
