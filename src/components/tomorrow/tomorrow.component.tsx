@@ -6,6 +6,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import { useTaskListStore } from "../../store/task-list.store"
 import TomorrowTask from "./tomorrow-task/tomorrow-task.component"
 import { useNavigate } from "react-router-dom"
+import useMaxTasks from "../../hooks/use-max-tasks"
 
 type Props = {
   pageState: MainPageState,
@@ -35,14 +36,15 @@ const Tomorrow: FC<Props> = ({ pageState, onStateChange }) => {
     }
   }, [ pageState ]);
 
+  const maxItems = useMaxTasks(2);
+
   const renderTasks = (): ReactNode[] => {
     return tasks
-      .filter((_, idx) => pageState === 'tomorrow' || idx < 4)
+      .filter((_, idx) => pageState === 'tomorrow' || idx < maxItems)
       .map(task => {
         return <TomorrowTask key={ task.id } task={ task } />
       });
   }
-
 
   return <div className={ classNames }>
     <div

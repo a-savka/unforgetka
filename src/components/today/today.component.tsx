@@ -3,6 +3,7 @@ import { MainPageState } from "../../types/main-page-state.type"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import { useTaskListStore } from "../../store/task-list.store"
 import TodayTask from "./today-task/today-task.component"
+import useMaxTasks from "../../hooks/use-max-tasks"
 
 type Props = {
   pageState: MainPageState,
@@ -32,9 +33,11 @@ const Today: FC<Props> = ({ pageState, onStateChange }) => {
     }
   }, [ pageState ]);
 
+  const maxItems = useMaxTasks();
+
   const renderTasks = (): ReactNode[] => {
     return tasks
-      .filter((_, idx) => pageState === 'today' || idx < 4)
+      .filter((_, idx) => pageState === 'today' || idx < maxItems)
       .map(task => {
         return <TodayTask key={ task.id } task={ task } />
       });

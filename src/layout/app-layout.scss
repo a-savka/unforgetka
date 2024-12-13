@@ -13,6 +13,7 @@
 .app-title {
   width: 100%;
   height: 130px;
+  min-height: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,8 +30,8 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 130px);
 }
-
 
 .day-container {
   flex-grow: 1;
